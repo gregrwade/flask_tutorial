@@ -16,6 +16,10 @@ def create_app(test_config=None):
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile("config.py", silent=True)
+        
+        # output the configuration values
+        for key, value in app.config.items():
+            print(f"config key {key} = {value}")
     else:
         # load the test config if passed in
         app.config.update(test_config)
