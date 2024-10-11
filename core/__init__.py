@@ -30,6 +30,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # ensure the static folder is changed if requested
+    if app.config["STATIC_FOLDER"]:
+        print(f"Setting static folder to {app.config['STATIC_FOLDER']}")
+        app.static_folder = app.config["STATIC_FOLDER"]
 
     @app.route("/hello")
     def hello():
