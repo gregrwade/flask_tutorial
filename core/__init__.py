@@ -31,10 +31,11 @@ def create_app(test_config=None):
         pass
 
     # ensure the static folder is changed if requested
-    if app.config["STATIC_FOLDER"]:
-        print(f"Setting static folder to {app.config['STATIC_FOLDER']}")
-        app.static_folder = app.config["STATIC_FOLDER"]
+    # if app.config["STATIC_FOLDER"]:
+    #     print(f"Setting static folder to {app.config['STATIC_FOLDER']}")
+    #     app.static_folder = app.config["STATIC_FOLDER"]
 
+    # a simple page that says hello. used to demonstrate a test case.
     @app.route("/hello")
     def hello():
         return "Hello, World!"
